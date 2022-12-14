@@ -1,82 +1,31 @@
 import React from "react";
 
 type RatingPropsType = {
-  value: 0 | 1 | 2 | 3| 4 | 5
-}
+  value: 0 | 1 | 2 | 3 | 4 | 5;
+};
 
-export default function Rating ({value}: RatingPropsType) {
-  switch (value) {
-    case 1:
-      return(
-        <div>
-          <Star selected={true} />
-          <Star selected={false}/>
-          <Star selected={false}/>
-          <Star selected={false}/>
-          <Star selected={false}/>
-        </div>
-      )
-    case 2:
-      return(
-        <div>
-          <Star selected={true} />
-          <Star selected={true}/>
-          <Star selected={false}/>
-          <Star selected={false}/>
-          <Star selected={false}/>
-        </div>
-      )
-    case 3:
-      return(
-        <div>
-          <Star selected={true} />
-          <Star selected={true}/>
-          <Star selected={true}/>
-          <Star selected={false}/>
-          <Star selected={false}/>
-        </div>
-      )
-    case 4:
-      return(
-        <div>
-          <Star selected={true} />
-          <Star selected={true}/>
-          <Star selected={true}/>
-          <Star selected={true}/>
-          <Star selected={false}/>
-        </div>
-      )
-    case 5:
-      return(
-        <div>
-          <Star selected={true} />
-          <Star selected={true}/>
-          <Star selected={true}/>
-          <Star selected={true}/>
-          <Star selected={true}/>
-        </div>
-      )
-    default:
-      return(
-        <div>
-          <Star selected={false} />
-          <Star selected={false}/>
-          <Star selected={false}/>
-          <Star selected={false}/>
-          <Star selected={false}/>
-        </div>
-      )
-  }
+export default function Rating({ value }: RatingPropsType) {
+  return (
+    <div>
+      <Star selected={value > 0} />
+      <Star selected={value > 1} />
+      <Star selected={value > 2} />
+      <Star selected={value > 3} />
+      <Star selected={value > 4} />
+    </div>
+  );
 }
 
 type StarPropsType = {
-  selected: boolean
-}
+  selected: boolean;
+};
 
-function Star({selected}: StarPropsType){
-  if(selected) {
-    return <span><b>Star </b></span>
-  } else {
-    return <span>Star </span>
-  }
+function Star({ selected }: StarPropsType) {
+  return selected ? (
+    <span>
+      <b>Star </b>
+    </span>
+  ) : (
+    <span>Star </span>
+  );
 }
