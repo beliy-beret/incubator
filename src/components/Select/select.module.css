@@ -1,0 +1,26 @@
+.wrapper {
+    position: relative;
+    width: 20rem;        
+}
+.wrapper select {
+    width: 100%;
+    appearance: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0;
+    background-image: url('./chevron.svg');
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-position: 97% 50%;        
+}
+.wrapper select:focus {
+    outline: none;
+    border: 4px solid black;
+}
+
+.wrapper option {
+    appearance: none;
+    background-color: inherit;
+    color: inherit
+}

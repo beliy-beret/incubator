@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import Accordion from './Accordion';
-import { type } from '@testing-library/user-event/dist/type';
 
 export default {
     title: 'Example/Accordion',
